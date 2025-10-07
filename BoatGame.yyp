@@ -35,6 +35,9 @@
   },
   "name":"BoatGame",
   "resources":[
+    {"id":{"name":"note_boats","path":"notes/note_boats/note_boats.yy",},},
+    {"id":{"name":"note_mechanics","path":"notes/note_mechanics/note_mechanics.yy",},},
+    {"id":{"name":"note_projectscope","path":"notes/note_projectscope/note_projectscope.yy",},},
     {"id":{"name":"TEST","path":"notes/TEST/TEST.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],

@@ -1,0 +1,138 @@
+# BoatGame – Mechanics Notes
+
+## Overview
+This document covers all mechanical systems, from voyage flow to gold economy, weather, and corruption. It serves as a technical-design record for development and future refactoring.
+
+---
+
+## Voyage Loop
+- 5-day voyage cycle (Day 1–5).  
+- Player selects boats to deploy each day.  
+- Each boat may sail **shallow** or **deep**:
+  - Shallow: lower risk, lower reward.  
+  - Deep: higher gold but higher risk from bad weather.  
+- Weather % forecast shown each day (affected by prior day’s corruption).  
+- End of voyage → shop phase → reset temporary HP and daily modifiers.  
+
+### Voyage End Conditions
+- Survive 5 days = collect stipend (bonus gold).  
+- Fail quota (not enough gold) = corruption rises.  
+- High corruption = increased bad weather chance and cult events.
+
+---
+
+## Boats
+### Core Stats
+- Health (Hull Integrity).  
+- Gold yield multiplier.  
+- Risk tolerance (affects survival chance).  
+- Temporary HP system for protection.  
+- Active abilities (some boats have one-use effects).  
+
+### Boat Archetypes (Gold-Based)
+1. **Golden Gull:** +5g per boat per day.  
+2. **Banker’s Wreck:** +1 temp HP per 100g (max 5 weekly).  
+3. **Echo Skiff:** Gains 25% of each other boat’s reward.  
+4. **Repair Barge:** Spend 50g to repair next boat; locks both for 1 day.  
+
+### Design Notes
+- Boats can have “Active” state — toggled true/false in code.  
+- Active boats get extra button in voyage screen.  
+- Long-term plan: mix passive and active boats for synergy play.
+
+---
+
+## Weather System
+### Core Design
+- Each day has a **Good Weather %** chance.  
+- Player uses prediction machine (Barometer + Tentacle Dial).  
+- Readout shows “XX% ± YY%” — base + deviation for risk.  
+- Player may pay gold to manipulate odds (advantage/disadvantage rolls).
+
+### UI Elements
+- Two analog dials + one digital screen (retro green font).  
+- Wires visually connecting dials to display for immersion.  
+- Labels:  
+  - Barometer: “Low / Medium / High” risk  
+  - Tentacle Dial: random spin animation  
+- Optional: Confidence Barometer (player perception stat).
+
+---
+
+## Shop System
+- Accessed after each 5-day voyage.  
+- Boats available to buy/upgrade.  
+- Prices scale with voyage count.  
+- Reroll option (spend gold to refresh inventory).  
+- Boat stats preview (with flavor text).  
+- Shopkeeper provides dynamic lines based on corruption level.
+
+---
+
+## Gold Economy
+- **Gold Sources:** Boat returns, stipends, special bonuses.  
+- **Gold Sinks:** Repairs, rerolls, corruption mitigation.  
+- **Special Effects:**  
+  - Some boats trigger abilities based on total gold held.  
+  - Example: +1 temp HP per 100g (Banker’s Wreck).  
+- Balance goal: tension between hoarding and investing.
+
+---
+
+## Corruption System
+- Tracks failure accumulation.  
+- Each failed quota increases corruption.  
+- Impacts gameplay by:  
+  - Raising bad weather probability.  
+  - Affecting shopkeeper dialogue and prices.  
+  - Triggering cult events or sea anomalies.  
+- Visually represented by darkening UI and glitch FX.  
+
+---
+
+## UI Systems Summary
+| Screen | Core Components | Notes |
+|--------|-----------------|-------|
+| **Shop Screen** | Boat cards, shopkeeper, reroll, gold counter | Post-voyage management |
+| **Voyage Screen** | Boat deploy slots, shallow/deep toggles, weather forecast | Core gameplay loop |
+| **Weather Screen** | Dials, display, roll lever | Atmospheric, tactile |
+| **HUD/UI** | Confidence bar, gold, day counter | Persistent info layer |
+
+---
+
+## MVP Task Breakdown
+### MVP Build 1
+- Working voyage loop.  
+- Weather roll + result screen.  
+- Basic gold flow.  
+- 3 functional boats.  
+- Basic corruption tracking.
+
+### MVP Build 2
+- Shop UI & logic.  
+- Upgrade/repair system.  
+- Confidence bar.  
+- Audio feedback (weather + shop).
+
+### MVP Build 3
+- Save/load implementation.  
+- Animations/polish passes.  
+- Meta-progression hooks.
+
+---
+
+## Future Systems (Post-MVP)
+- **Cult Tribute System:** Miss quotas too long = town consumed.  
+- **Procedural Weather:** seeded randomness between runs.  
+- **Boat Synergy Tags:** e.g., “Echo,” “Faith,” “Metal,” influencing combos.  
+- **Town Screen:** Hub where upgrades, lore, and endings are accessible.  
+- **Event Cards:** Mid-voyage random text events with choices.  
+
+---
+
+## Developer Notes
+- Each system modular — no direct hard links unless necessary.  
+- Start with placeholder art and iterate.  
+- Failure → feedback → fun.  
+- Don’t overbuild until MVP stable.  
+- Push to GitHub after each working milestone.

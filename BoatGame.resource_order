@@ -16,5 +16,9 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"note_boats","order":3,"path":"notes/note_boats/note_boats.yy",},
+    {"name":"note_mechanics","order":2,"path":"notes/note_mechanics/note_mechanics.yy",},
+    {"name":"note_projectscope","order":1,"path":"notes/note_projectscope/note_projectscope.yy",},
+  ],
 }

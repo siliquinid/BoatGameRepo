@@ -1,0 +1,95 @@
+# BoatGame – Project Scope Notes
+
+## Overview
+BoatGame is a darkly atmospheric **eldritch steampunk roguelite** where the player commands a fleet of small fishing boats, venturing out into an indifferent sea to earn gold, manage risk, and stave off corruption.  
+The player cycles through voyages, shop upgrades, and weather prediction phases in a looping gameplay structure designed for strategic experimentation and emergent synergies.
+
+## Vision & Tone
+- **Theme:** Cosmic indifference meets nautical industry — the sea is vast, unknowable, and uncaring.  
+- **Aesthetic:** Pixel-art steampunk with eldritch undertones. Brass instruments, worn dials, flickering readouts, and faint tentacles in the UI.  
+- **Tone:** Equal parts dark humor and quiet dread. The shopkeeper is chipper yet unsettling. The world doesn’t notice failure; it just consumes it.  
+- **Core Feel:** Each voyage feels like a calculated gamble in an uncaring world. Losing should teach and tempt players back, not punish them.
+
+## Development Summary
+- **Engine:** GameMaker Studio 2  
+- **Language:** GML  
+- **Version Control:** GitHub via GitHub Desktop (manual commits/pushes for now)  
+- **Art Tools:** Aseprite for sprites, GameMaker’s built-in editors for quick UI work.  
+- **Music/SFX:** Strudel (for procedural beats), possible Anvil Studio or Famistudio later.  
+- **Style:** 48×48 pixel assets, transparent backgrounds, simple but readable silhouettes.  
+- **Current Workflow:**  
+  1. Core game logic built in GMS2.  
+  2. Repository managed manually via GitHub Desktop.  
+  3. ChatGPT used as pair programmer and design co-writer.  
+  4. Future goal: integrate Git into GMS source control once stable.
+
+## MVP (Minimum Viable Product)
+**Goal:** Deliver a fully playable 5-day voyage loop with gold economy, weather variance, and basic shop.
+
+### Core MVP Features
+- Fleet management (own 3 boats at start).  
+- Voyage loop (5 days → shop phase → repeat).  
+- Weather system with % prediction and RNG.  
+- Boat deployment (shallow/deep).  
+- Basic shop to purchase/upgrade boats.  
+- Gold gain and repair mechanics.  
+- Corruption meter (failure tolerance system).  
+- Simple UI for weather dials and confidence meter.  
+- Persistent score or “run summary.”
+
+## Polish Targets
+- Animations for UI (barometers, dials, levers).  
+- Audio: clockwork ticks, brass creaks, sea ambience.  
+- Sprite detailing for unique boat silhouettes.  
+- Dynamic shopkeeper dialogue (cheerful yet eerie).  
+- Meta-progression layer (unlocked upgrades, lore).  
+- Optional tutorial with narrative framing.
+
+## UI / UX Concepts
+### Weather Prediction Screen
+- Dual dials (Barometer + Tentacle Vein).  
+- Digital green display showing `XX% ± YY%`.  
+- “Roll” lever mechanic for daily forecast.  
+- Connected wires/pipes implying steampunk machine.
+
+### Shop Screen
+- Shopkeeper portrait (friendly cultist).  
+- Boat cards showing cost, stats, and flavor text.  
+- Gold counter + stipend system.  
+- Confidence barometer for player morale visualization.
+
+### Round / Voyage Screen
+- Deploy boats (choose 3 per day).  
+- Shallow or Deep route buttons.  
+- Display of weather risk & potential reward.  
+- Daily results: gold gain/loss, damage, temporary HP.
+
+## Failure Philosophy
+- **Failure is expected** — it teaches player systems.  
+- **Corruption replaces “Game Over”** — runs spiral, not stop.  
+- **Cosmic indifference** — the world continues; only the player learns.  
+- **Shop Phase Fun:** The shop is the emotional payoff. New synergies and strategies await discovery.
+
+## Design Pillars
+1. **Strategic tension:** Every decision has opportunity cost.  
+2. **Discovery loop:** Learning from failure encourages replay.  
+3. **Expressive tools:** Players build and test synergies between boats.  
+4. **Atmospheric cohesion:** Art, sound, and text reinforce cosmic tone.  
+5. **Simplicity first:** Every system must serve the MVP loop. Avoid scope creep.
+
+## Long-Term Potential
+- Meta upgrades (persistent improvements between runs).  
+- Cult tribute system (tribute or be consumed).  
+- Narrative events during voyages (text snippets).  
+- Procedural weather seeds (unique runs).  
+- Steam release once stable and tested.
+
+---
+
+# Developer Philosophy
+David Siliquini — Solo Developer  
+- “Small, complete loops over big unfinished dreams.”  
+- Use Git and notes early to protect progress.  
+- Commit after each working change, push once daily.  
+- Keep ChatGPT integrated as both **designer** and **debugging partner**.  
+- Balance ambition with sanity — the goal is learning, not perfection.
