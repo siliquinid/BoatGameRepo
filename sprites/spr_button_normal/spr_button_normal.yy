@@ -25,10 +25,10 @@
   "nineSlice":{
     "$GMNineSliceData":"",
     "bottom":12,
-    "enabled":false,
+    "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
-    "highlightStyle":0,
+    "highlightStyle":1,
     "left":12,
     "resourceType":"GMNineSliceData",
     "resourceVersion":"2.0",
